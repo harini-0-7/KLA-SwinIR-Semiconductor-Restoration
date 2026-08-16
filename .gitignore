@@ -1,0 +1,38 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Jupyter / Colab
+.ipynb_checkpoints/
+
+# Virtual environments
+venv/
+env/
+.venv/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+
+# Dataset files
+*.npy
+
+# Generated results
+results/
+
+# Python build files
+build/
+dist/
+*.egg-info/
+
+# IDE
+.vscode/
+.idea/
