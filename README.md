@@ -1,12 +1,16 @@
-# KLA SwinIR - Semiconductor Image Restoration
+# KLA SwinIR — Semiconductor Image Restoration
 
-## AI-Based Restoration of Degraded Semiconductor Inspection Images
+### AI-Based Restoration of Degraded Semiconductor Inspection Images
 
-This project implements a SwinIR-based image restoration pipeline for
-grayscale semiconductor inspection images.
+> A SwinIR-based deep-learning pipeline for restoring degraded grayscale semiconductor inspection images affected by noise and spatial-resolution reduction.
 
-The model takes a degraded low-resolution image and reconstructs a
-higher-resolution restored image.
+**Input:** 128×128 degraded image  
+**Output:** 256×256 restored image  
+**Scale:** ×2  
+**Model:** SwinIR  
+**Validation:** 320 images  
+**Test:** 400 images  
+**Test restoration success:** 400/400
 
 ---
 
@@ -132,7 +136,7 @@ Best checkpoint:
 
 Checkpoint:
 
-    checkpoints/swinir_best.pth
+    model/swinir_best.pth
 
 ---
 
@@ -205,9 +209,9 @@ The visual comparison contains:
           v
       Ground Truth
 
-Comparison image:
+Comparison image was generated as a project demonstration asset:
 
-    results/swinir_comparison_001692.png
+    swinir_comparison_001692.png
 
 ---
 
@@ -294,11 +298,11 @@ source-code modification.
     +-- train.py
     +-- requirements.txt
     |
-    +-- checkpoints/
+    +-- model/
     |   +-- swinir_best.pth
     |
-    +-- model/
-    |   +-- network_swinir.py
+    +-- src/
+    |   +-- src/network_swinir.py
     |
     +-- results/
         +-- restored_test/
@@ -396,7 +400,31 @@ model benchmarking.
 
 ---
 
-## 19. Project Status
+---
+
+# 🏆 Verified Final Results
+
+The completed evaluation pipeline produced the following verified results:
+
+| Metric | Result |
+|---|---:|
+| Training pairs | 3,200 |
+| Validation images | 320 |
+| Test images | 400 |
+| Best epoch | 13 |
+| Best validation loss | 0.034366 |
+| Average PSNR | **29.1822 dB** |
+| Average SSIM | **0.764353** |
+| Average LPIPS | **0.299637** |
+| Test restoration | **400/400** |
+| Test success rate | **100%** |
+| Output resolution | **256 × 256** |
+| Average inference | **0.2209 sec/image** |
+| Throughput | **4.53 images/sec** |
+| Evaluation GPU | NVIDIA Tesla T4 |
+
+
+# 19. Project Status
 
     Dataset preparation     : COMPLETE
     SwinIR implementation   : COMPLETE
@@ -408,7 +436,7 @@ model benchmarking.
     Test inference          : COMPLETE
     400/400 restoration     : COMPLETE
     Standalone evaluator    : VERIFIED
-    GitHub packaging        : IN PROGRESS
+    GitHub packaging        : COMPLETE
 
 ---
 
@@ -420,3 +448,49 @@ restoration challenge.
 The project focuses on efficient deep-learning-based restoration of
 degraded microscopic semiconductor inspection images.
 
+
+
+---
+
+# 🔮 Future Improvements
+
+Potential future improvements include:
+
+- Bicubic baseline comparison
+- Additional SwinIR fine-tuning
+- Test-time augmentation
+- GPU inference optimization
+- Larger-scale validation
+- Real-time restoration interface
+- Integration with semiconductor defect-analysis pipelines
+- Additional domain-specific image-quality metrics
+
+These are future improvements and are **not claimed as completed experiments** in the current results.
+
+
+
+---
+
+# 📦 Repository Status
+
+The GitHub repository has been verified with:
+
+- ✅ `main` branch
+- ✅ Remote tracking configured
+- ✅ Clean working tree
+- ✅ Training script
+- ✅ Evaluation script
+- ✅ SwinIR architecture
+- ✅ Trained checkpoint
+- ✅ Requirements file
+- ✅ README
+- ✅ Dataset protection through `.gitignore`
+- ✅ No dataset `.npy` files tracked
+
+---
+
+## 👩‍💻 Project
+
+**KLA SwinIR — Semiconductor Image Restoration**
+
+Developed as a solution for the semiconductor image restoration challenge.
